@@ -12,13 +12,29 @@ import { FaArrowLeft } from "react-icons/fa";
 
 export const dynamic = "force-dynamic";
 
+const BYPASS_USER_UID = "3157823c-8ddb-42e5-894f-6a9367f6efcf";
+
 export default async function Index({ params }: { params: { id: string } }) {
   const supabase = createServerComponentClient<Database>({ cookies });
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
+  let activeUser = user;
+  
+  if (!user && process.env.NODE_ENV === "development") {
+    activeUser = {
+      id: BYPASS_USER_UID,
+      email: "panzhiqiang@gmail.com",
+      user_metadata: {},
+      app_metadata: {},
+      aud: "authenticated",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    } as any;
+  }
+
+  if (!activeUser) {
     return <Login />;
   }
 
@@ -26,7 +42,7 @@ export default async function Index({ params }: { params: { id: string } }) {
     .from("models")
     .select("*")
     .eq("id", Number(params.id))
-    .eq("user_id", user.id)
+    .eq("user_id", activeUser.id)
     .single();
 
   if (!model) {

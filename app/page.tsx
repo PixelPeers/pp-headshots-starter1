@@ -13,6 +13,8 @@ import CTASection from "@/components/homepage/CTASection"
 
 export const dynamic = "force-dynamic"
 
+const BYPASS_USER_UID = "3157823c-8ddb-42e5-894f-6a9367f6efcf"
+
 export default async function Index() {
   const supabase = createServerComponentClient({ cookies })
 
@@ -21,6 +23,10 @@ export default async function Index() {
   } = await supabase.auth.getUser()
 
   if (user) {
+    return redirect("/overview")
+  }
+
+  if (process.env.NODE_ENV === "development") {
     return redirect("/overview")
   }
 

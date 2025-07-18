@@ -23,6 +23,8 @@ const stripeIsConfigured = process.env.NEXT_PUBLIC_STRIPE_IS_ENABLED === "true";
 const packsIsEnabled = process.env.NEXT_PUBLIC_TUNE_TYPE === "packs";
 export const revalidate = 0;
 
+const BYPASS_USER_UID = "3157823c-8ddb-42e5-894f-6a9367f6efcf";
+
 export default async function Navbar() {
   const supabase = createServerComponentClient<Database>({ cookies });
 
@@ -30,10 +32,24 @@ export default async function Navbar() {
     data: { user },
   } = await supabase.auth.getUser();
 
+  let activeUser = user;
+  
+  if (!user && process.env.NODE_ENV === "development") {
+    activeUser = {
+      id: BYPASS_USER_UID,
+      email: "panzhiqiang@gmail.com",
+      user_metadata: {},
+      app_metadata: {},
+      aud: "authenticated",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    } as any;
+  }
+
   const { data: credits } = await supabase
     .from("credits")
     .select("*")
-    .eq("user_id", user?.id ?? "")
+    .eq("user_id", activeUser?.id ?? "")
     .single();
 
   return (
@@ -44,7 +60,7 @@ export default async function Navbar() {
           <span>Headshots AI</span>
         </Link>
         
-        {user && (
+        {activeUser && (
           <nav className="hidden md:flex gap-6">
             <Link href="/overview" className="text-sm font-medium hover:text-primary transition-colors">
               Home
@@ -65,7 +81,7 @@ export default async function Navbar() {
         <div className="flex items-center gap-4">
           <ThemeToggle />
           
-          {!user && (
+          {!activeUser && (
             <>
               <Link href="/login" className="hidden sm:block text-sm font-medium hover:text-primary transition-colors">
                 Login
@@ -76,7 +92,7 @@ export default async function Navbar() {
             </>
           )}
 
-          {user && (
+          {activeUser && (
             <div className="flex items-center gap-4">
               {stripeIsConfigured && (
                 <ClientSideCredits creditsRow={credits ? credits : null} />
@@ -89,7 +105,7 @@ export default async function Navbar() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56 z-[101]">
                   <DropdownMenuLabel className="text-primary text-center overflow-hidden text-ellipsis">
-                    {user.email}
+                    {activeUser.email}
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <form action="/auth/sign-out" method="post">

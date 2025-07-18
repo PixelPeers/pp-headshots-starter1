@@ -7,6 +7,11 @@ import { Database } from './types/supabase'
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next()
   const supabase = createMiddlewareClient<Database>({ req, res })
+  
+  if (process.env.NODE_ENV === 'development' && req.nextUrl.pathname.startsWith('/overview')) {
+    return res
+  }
+  
   await supabase.auth.getSession()
   return res
 }
