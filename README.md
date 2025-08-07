@@ -14,10 +14,10 @@
 [🚀 Live Demo](https://adonis.aiheadshots.click) • [📖 Documentation](#documentation) • [🛠️ Setup Guide](#quick-start) • [💬 Support](#support)
 
 Contributors:
-Jason Zhiqiang Pan
-Adel Kandi
-Anas Abbadi
-Wint Damhrung
+Jason Zhiqiang Pan |
+Adel Kandi |
+Anas Abbadi |
+Wint Damhrung |
 Quiel Andrew Castro
 
 ![Headshot AI Demo](public/new-demo.png)
