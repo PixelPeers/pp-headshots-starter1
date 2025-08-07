@@ -14,7 +14,7 @@
 [🚀 Live Demo](https://adonis.aiheadshots.click) • [📖 Documentation](#documentation) • [🛠️ Setup Guide](#quick-start) • [💬 Support](#support)
 
 Contributors:
-Jason Zhiqiang Pan |
+Jason Pan |
 Adel Kandi |
 Anas Abbadi |
 Wint Damhrung |
@@ -43,7 +43,7 @@ Quiel Andrew Castro
 
 | Category | Technology |
 |----------|------------|
-| **Frontend** | Next.js 14, React 18, TypeScript, Tailwind CSS |
+| **Frontend** | Next.js , React 18, TypeScript, Tailwind CSS |
 | **Backend** | Next.js API Routes, Supabase |
 | **AI/ML** | Astria.ai API, Flux Model Fine-tuning |
 | **Database** | PostgreSQL (Supabase) |
