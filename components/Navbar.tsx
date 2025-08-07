@@ -41,7 +41,7 @@ export default async function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold text-xl">
           <Camera className="h-5 w-5 text-primary" />
-          <span>Headshots AI</span>
+          <span>AI Headshots Click</span>
         </Link>
         
         {user && (
