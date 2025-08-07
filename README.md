@@ -1,274 +1,299 @@
-# 👨‍💼 [Headshot AI](https://headshots-starter.vercel.app/) - Professional Headshots with AI (powered by Astria.ai)
+<div align="center">
 
-Introducing Headshot AI, an open-source project from [Astria](https://www.astria.ai/) that generates Professional AI Headshots in minutes.
+# 🎯 Headshot AI
 
-This project was built to give developers & makers a great starting point into building AI applications. This is your launch pad - fork the code, modify it, and make it your own to build a popular AI SaaS app.
+**Professional AI Headshots in Minutes**
 
-<!-- Add our vercel Link -->
-<!-- [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Ftree%2Fmain&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=Set%20up%20environment%20variables%20for%20Leap%20AI%20and%20redirect%20URL%20in%20Supabase%20Auth%20dashboard.%20See%20.env.local.example%20for%20full%20config%20with%20Resend%20and%20Stripe.&envLink=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Fblob%2Fmain%2F.env.local.example&project-name=headshots-starter-clone&repository-name=headshots-starter-clone&demo-title=AI%20Headshot%20Generator&demo-description=A%20Professional%20AI%20headshot%20generator%20starter%20kit%20powered%20by%20Next.js%2C%20Leap%20AI%2C%20and%20Vercel&demo-url=https%3A%2F%2Fwww.getheadshots.ai%2F&demo-image=https%3A%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F1CEDfTwO5vPEiNMgN2Y1t6%2F245d1e0c11c4d8e734fbe345b9ecdc7c%2Fdemo.png&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Ftree%2Fmain) -->
+*An open-source AI-powered headshot generator built with Next.js*
 
-[![Headshot AI Demo](/public/new-demo.png)](https://headshots-starter.vercel.app/)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.1-blue)](https://typescriptlang.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-Database-green)](https://supabase.com/)
 
-## Incoming changes
+[🚀 Live Demo](https://adonis.aiheadshots.click) • [📖 Documentation](#documentation) • [🛠️ Setup Guide](#quick-start) • [💬 Support](#support)
 
-Incoming [PR]((https://github.com/astriaai/headshots-starter/pull/121)) has been merged to allow usage of  Astria's packs API which helps you avoid hardcoding prompts in your code as well as offering different packs of prompts, and switching to the new Flux model fine-tuning easily.
-Read more on advantage of using packs [Astria's documentation](https://docs.astria.ai/docs/api/pack/pack/).
+![Headshot AI Demo](public/new-demo.png)
 
-When migrating to the new packs api, add to your vercel environment:
-```text
+</div>
+
+---
+
+## ✨ Features
+
+- 🎨 **AI-Powered Generation** - Create professional headshots using advanced AI models
+- ⚡ **Lightning Fast** - Generate high-quality images in minutes, not hours  
+- 🎯 **Multiple Styles** - Choose from various professional styles and themes
+- 💳 **Flexible Pricing** - Credit-based system with Stripe integration
+- 🔐 **Secure Authentication** - Magic link login via Supabase Auth
+- 📱 **Responsive Design** - Works perfectly on desktop and mobile
+- 🎪 **Pack System** - Curated prompt collections for consistent results
+- 📊 **Real-time Updates** - Live progress tracking during model training
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+| Category | Technology |
+|----------|------------|
+| **Frontend** | Next.js 14, React 18, TypeScript, Tailwind CSS |
+| **Backend** | Next.js API Routes, Supabase |
+| **AI/ML** | Astria.ai API, Flux Model Fine-tuning |
+| **Database** | PostgreSQL (Supabase) |
+| **Auth** | Supabase Auth (Magic Links) |
+| **Storage** | Vercel Blob |
+| **Payments** | Stripe |
+| **Email** | Resend |
+| **Deployment** | Vercel |
+
+</div>
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+- Astria.ai API key
+- Supabase account
+- Vercel account (for deployment)
+
+### 1. Deploy with Vercel (Recommended)
+
+Click the button below to deploy with pre-configured environment variables:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FPixelPeers%2Fpp-headshots-starter1&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=Set%20up%20environment%20variables%20for%20Astria%20AI%20and%20redirect%20URL%20in%20Supabase%20Auth%20dashboard.%20See%20.env.local.example%20for%20full%20config%20with%20Resend%20and%20Stripe.&project-name=headshots-starter-clone&repository-name=headshots-starter-clone&demo-title=AI%20Headshot%20Generator&demo-description=A%20Professional%20AI%20headshot%20generator%20starter%20kit%20powered%20by%20Next.js%20and%20Vercel)
+
+### 2. Local Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/PixelPeers/pp-headshots-starter1.git
+cd pp-headshots-starter1
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Copy environment variables
+cp .env.local.example .env.local
+
+# Start development server
+npm run dev
+# or 
+yarn dev
+```
+
+Visit `http://localhost:3000` to see your application running!
+
+## ⚙️ Configuration
+
+### Essential Environment Variables
+
+Create a `.env.local` file with the following variables:
+
+```env
+# Astria AI Configuration
+ASTRIA_API_KEY=your_astria_api_key
+APP_WEBHOOK_SECRET=your_webhook_secret
+DEPLOYMENT_URL=https://your-domain.com
+
+# Supabase Configuration  
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+
+# Vercel Blob Storage
+BLOB_READ_WRITE_TOKEN=your_blob_token
+
+# Optional: Pack API Configuration
+NEXT_PUBLIC_TUNE_TYPE=packs  # or 'tune'
+PACK_QUERY_TYPE=both  # 'users', 'gallery', or 'both'
+
+# Optional: Stripe Integration
+NEXT_PUBLIC_STRIPE_IS_ENABLED=true
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+STRIPE_PRICE_ID_ONE_CREDIT=price_xxx
+STRIPE_PRICE_ID_THREE_CREDITS=price_xxx  
+STRIPE_PRICE_ID_FIVE_CREDITS=price_xxx
+
+# Optional: Email Notifications
+RESEND_API_KEY=your_resend_api_key
+```
+
+### Database Setup
+
+The Vercel deployment automatically sets up your Supabase database with the required tables:
+- `credits` - User credit management
+- `models` - AI model training records  
+- `images` - Generated image references
+- `samples` - Training image uploads
+
+## 📁 Project Structure
+
+```
+├── app/                    # Next.js 14 App Router
+│   ├── astria/            # Astria AI API integration
+│   ├── auth/              # Authentication routes
+│   ├── overview/          # Protected dashboard
+│   └── stripe/            # Payment webhooks
+├── components/            # React components
+│   ├── ui/               # Shadcn/ui components
+│   ├── homepage/         # Landing page sections
+│   └── realtime/         # Live data components
+├── lib/                  # Utility libraries
+├── types/                # TypeScript definitions
+└── supabase/            # Database migrations
+```
+
+## 🎨 Customization
+
+### Adding New Prompt Packs
+
+1. Configure pack mode in your environment:
+```env
 NEXT_PUBLIC_TUNE_TYPE=packs
 PACK_QUERY_TYPE=both
 ```
 
-![Headshot AI Packs](assets/headshots-packs.png)
-Here is how it looks
+2. Create packs via the Astria API documentation
 
-## Important Environment Variable Change
+### Styling Customization
 
-**Note:** The environment variable `VERCEL_URL` has been renamed to `DEPLOYMENT_URL` for consistency across the codebase. If you're updating from a previous version, please update your environment variables accordingly. This change makes the application more platform-agnostic and clearer for deployments on any hosting provider, not just Vercel.
+The project uses Tailwind CSS with Shadcn/ui components. Customize the design by:
 
-## How It Works
+1. **Colors & Theme**: Edit `tailwind.config.ts`
+2. **Components**: Modify files in `components/ui/`
+3. **Global Styles**: Update `app/globals.css`
 
-Live demo **[here](https://getheadshots.ai)**.
+### Adding Payment Options
 
-The app is powered by:
+Configure additional Stripe products by:
 
-- 🚀 [Astria](https://www.astria.ai/) for AI model training & inference
-- ▲ [Next.js](https://nextjs.org/) for app and landing page
-- 🔋 [Supabase](https://supabase.com/) for DB & Auth
-- 📩 [Resend](https://resend.com/) (optional) to email user when headshots are ready
-- ⭐️ [Shadcn](https://ui.shadcn.com/) with [Tailwind CSS](https://tailwindcss.com/) for styles
-- ▲ [Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Ftree%2Fmain&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=Set%20up%20environment%20variables%20for%20Leap%20AI%20and%20redirect%20URL%20in%20Supabase%20Auth%20dashboard.%20See%20.env.local.example%20for%20full%20config%20with%20Resend%20and%20Stripe.&envLink=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Fblob%2Fmain%2F.env.local.example&project-name=headshots-starter-clone&repository-name=headshots-starter-clone&demo-title=AI%20Headshot%20Generator&demo-description=A%20Professional%20AI%20headshot%20generator%20starter%20kit%20powered%20by%20Next.js%2C%20Leap%20AI%2C%20and%20Vercel&demo-url=https%3A%2F%2Fwww.getheadshots.ai%2F&demo-image=https%3A%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F1CEDfTwO5vPEiNMgN2Y1t6%2F245d1e0c11c4d8e734fbe345b9ecdc7c%2Fdemo.png&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Ftree%2Fmain) for deployments
-- 💳 [Stripe](https://stripe.com/) for billing
+1. Creating products in your [Stripe Dashboard](https://dashboard.stripe.com/products)
+2. Adding price IDs to your environment variables
+3. Updating the pricing table in `components/stripe/StripeTable.tsx`
 
-[![Headshot AI Explainer](/public/new-explainer.png)](https://www.astria.ai/)
+## 📷 Getting Great Results
 
-## Running Locally
+![Results Example](public/good_results.png)
 
-To create your own Headshot AI app, follow these steps:
+### Training Image Best Practices
 
-**Note**
-Training models is only available on paid plans. You'll need an active [Astria API Key](<[url](https://www.astria.ai/pricing)>) to train models.
+- ✅ **Use close-up face shots** - Center the face in the frame
+- ✅ **Single person only** - Avoid group photos  
+- ✅ **Clear, well-lit images** - Good lighting is crucial
+- ✅ **Consistent aspect ratio** - Use 1:1 (square) images
+- ❌ **Avoid accessories** - No sunglasses, hats, or masks
+- ❌ **No multiple faces** - Can cause distorted results
 
-### 1. Vercel template
+### Recommended Settings
 
-To setup Supabase/Vercel and your github repo, click on the Vercel Deploy Button and follow the steps.
+- **Image Count**: 10-20 training images
+- **Resolution**: 512x512 or 1024x1024  
+- **Format**: JPG or PNG
+- **File Size**: Under 5MB each
 
-IMPORTANT: In the Supabase integration step: Make sure you leave the Create sample tables option checked. This might take a few minutes to complete.
+## 🚦 API Routes
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Ftree%2Fmain&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=Set%20up%20environment%20variables%20for%20Leap%20AI%20and%20redirect%20URL%20in%20Supabase%20Auth%20dashboard.%20See%20.env.local.example%20for%20full%20config%20with%20Resend%20and%20Stripe.&envLink=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Fblob%2Fmain%2F.env.local.example&project-name=headshots-starter-clone&repository-name=headshots-starter-clone&demo-title=AI%20Headshot%20Generator&demo-description=A%20Professional%20AI%20headshot%20generator%20starter%20kit%20powered%20by%20Next.js%2C%20Leap%20AI%2C%20and%20Vercel&demo-url=https%3A%2F%2Fwww.getheadshots.ai%2F&demo-image=https%3A%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F1CEDfTwO5vPEiNMgN2Y1t6%2F245d1e0c11c4d8e734fbe345b9ecdc7c%2Fdemo.png&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Ftree%2Fmain)
+| Endpoint | Method | Purpose |
+|----------|--------|---------|
+| `/astria/train-model` | POST | Start model training |
+| `/astria/train-webhook` | POST | Handle training completion |
+| `/astria/prompt-webhook` | POST | Handle image generation |
+| `/astria/packs` | GET | Fetch available prompt packs |
+| `/stripe/subscription-webhook` | POST | Process payments |
 
-The Vercel Deployment will create a new repository with this template on your GitHub account and guide you through a new Supabase project creation. The Supabase Vercel Deploy Integration will set up the necessary Supabase environment variables and run the SQL migrations to set up the Database schema on your account. You can inspect the created tables in your project's Table editor.
+## 🤝 Contributing
 
-This will create the tables with their respective columns and RLS policies:
+We welcome contributions! Here's how to get started:
 
-- credits
-- images
-- models
-- samples
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** and test thoroughly
+4. **Commit your changes**: `git commit -m 'Add amazing feature'`
+5. **Push to your branch**: `git push origin feature/amazing-feature`  
+6. **Open a Pull Request** targeting the `dev` branch
 
-### 2. Clone your newly created repo:
+### Development Guidelines
 
-```
-git clone {{your-repo-name}}
-```
+- Follow existing code style and conventions
+- Add TypeScript types for new features
+- Test your changes locally before submitting
+- Update documentation for significant changes
 
-### 3. Enter your newly created repo's directory:
+## 💡 Additional Use Cases
 
-```
-cd {{your-repo-name}}
-```
+This platform can be adapted for various AI image generation applications:
 
-### 4. Install dependencies:
+- 🎭 **AI Avatars** - Custom character styles
+- 🐕 **Pet Portraits** - Professional pet photography
+- 📸 **Product Photography** - E-commerce imagery
+- 🎨 **Style Transfer** - Consistent visual assets
+- 🏢 **Brand Assets** - Logo variations and designs
 
-For npm:
+## 📊 Performance & Scaling
 
-```bash
-npm install
-```
+- **Training Time**: 10-15 minutes per model
+- **Generation Time**: 30-60 seconds per image
+- **Concurrent Users**: Scales with Vercel/Supabase limits
+- **Storage**: Handled by Vercel Blob (unlimited)
+- **Database**: PostgreSQL with connection pooling
 
-For yarn:
+## 🐛 Troubleshooting
 
-```bash
-yarn
-```
+### Common Issues
 
-### 5. Magic Link Auth (Supabase)
+**Webhook not working?**
+- Ensure `DEPLOYMENT_URL` is not a Vercel preview URL
+- Use ngrok for local development webhooks
 
-In your supabase [dashboard](https://supabase.com/dashboard/), select newly created project, go to Authentication -> Email Templates -> Magic Link and paste the following template:
+**Model training fails?**
+- Check image quality and format requirements
+- Verify Astria API key and credits
 
-```
-<h2>Magic Link</h2>
-<p>Follow this link to login:</p>
-<p><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email">Log In</a></p>
-```
+**Authentication issues?**  
+- Confirm Supabase URL configuration
+- Check redirect URLs in Supabase dashboard
 
-Then, make sure to setup your site URL and redirect urls in the supabase dashboard under Authentication -> URL Configuration.
+**Build errors?**
+- Run `npm run build` to check for TypeScript errors
+- Ensure all environment variables are set
 
-For example:
+## 📚 Documentation
 
-Site URL: https://headshots-starter.vercel.app
+- [Astria API Docs](https://docs.astria.ai/)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Supabase Docs](https://supabase.com/docs)
+- [Stripe Integration Guide](https://stripe.com/docs/payments/checkout)
 
-Redirect URL: https://headshots-starter.vercel.app/**
+## 🏆 Support
 
-### 6. Create a [Astria](https://www.astria.ai/) account
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/PixelPeers/pp-headshots-starter1/issues)
+- 💬 **Questions**: [GitHub Discussions](https://github.com/PixelPeers/pp-headshots-starter1/discussions)
+- 📧 **General Support**: Create an issue for assistance
 
-In your `.env.local` file:
+## 📝 License
 
-- Fill in `your_api_key` with your [Astria API key](https://www.astria.ai/users/edit#api)
-- Fill in `your-webhook-secret` with any arbitrary URL friendly string eg.`shadf892yr398hq23h`
-- Fill in `your-deployment-url` with a url to catch webhooks from Astria. This will be your vercel deployment url or Ngrok tunnel locally (eg. https://{your-hosted-url}/astria/train-webhook)
-- Fill in `your-blob-read-write-token` with your Vercel Blob token (steps below)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-If your production webhook callbacks do not seem to be working, make sure the callback URL is not of a Vercel dedicated branch deployment which requires authentication, in which case you will not see the callback in the logs.
-### 7. Configure the Announcement Bar (Optional)
+## 🙏 Acknowledgments
 
-To enable and customize the announcement bar at the top of your site, configure these environment variables in your `.env.local`:
+- [Astria.ai](https://astria.ai) for AI training capabilities
+- [Vercel](https://vercel.com) for deployment platform
+- [Supabase](https://supabase.com) for backend services
+- [Shadcn](https://ui.shadcn.com) for UI components
 
-```text
-# Announcement Bar Configuration
-NEXT_PUBLIC_ANNOUNCEMENT_ENABLED=true # set to false to disable the announcement bar
-NEXT_PUBLIC_ANNOUNCEMENT_MESSAGE="Your announcement message here" # the message to display
-```
+---
 
+<div align="center">
 
-### 8. Configure [Vercel Blob](https://vercel.com/docs/storage/vercel-blob/quickstart#client-uploads) for image uploads
+**Ready to generate amazing headshots?** 
 
-In your Vercel project, create a [Blob store](https://vercel.com/docs/storage/vercel-blob/quickstart#create-a-blob-store)
+[🚀 Deploy Now](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FPixelPeers%2Fpp-headshots-starter1) • [⭐ Star this repo](https://github.com/PixelPeers/pp-headshots-starter1)
 
-- In your Vercel dashboard, select the Storage tab, then select the Connect Database button.
-- Under the Create New tab, select Blob and then the Continue button.
+Built with ❤️ by developers, for developers
 
-Then to configure in your .env:
-
-- In your Vercel dashboard, select the Settings tab, then select the Environment Variables tab.
-- Copy your `BLOB_READ_WRITE_TOKEN` to your .env
-
-### 9. Create a [Resend](https://resend.com/) account (Optional)
-
-- Fill in `your-resend-api-key` with your Resend API Key if you wish to use Resend to email users when their model has finished training.
-
-### 10. Configure [Stripe](https://stripe.com) to bill users on a credit basis. (Optional)
-
-The current setup is for a credit based system. 1 credit = 1 model train.
-
-To enable Stripe billing, you will need to fill out the following fields in your `.env.local` file:
-
-- STRIPE_SECRET_KEY=your-stripe-secret-key
-- STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
-- STRIPE_PRICE_ID_ONE_CREDIT=your-stripe-price-id-one-credit
-- STRIPE_PRICE_ID_THREE_CREDITS=your-stripe-price-id-three-credit
-- STRIPE_PRICE_ID_FIVE_CREDITS=your-stripe-price-id-five-credit
-- NEXT_PUBLIC_STRIPE_IS_ENABLED=false # set to true to enable Stripe payments
-
-You need to do multiple things to get Stripe working:
-
-- Get your Stripe API secret key from the [Stripe Dashboard](https://dashboard.stripe.com/test/apikeys)
-- Create a [Stripe Webhook](https://dashboard.stripe.com/test/webhooks) that will point to your hosted URL. The webhook should be listening for the `checkout.session.completed` event. The webhook should point to `your-hosted-url/stripe/subscription-webhook`.
-- Create a [Stripe Price](https://dashboard.stripe.com/test/products) for each credit package you want to offer.
-- Create a [Stripe Pricing Table](https://dashboard.stripe.com/test/pricing-tables) and replace the script @/components/stripe/StripeTable.tsx with your own values. It should look like this:
-
-```js
-<stripe-pricing-table
-  pricing-table-id="your-stripe-pricing-table-id"
-  publishable-key="your-stripe-publishable-key"
-  client-reference-id={user.id}
-  customer-email={user.email}
-></stripe-pricing-table>
-```
-
-Here are the products you need to create to get Stripe working with our example, checkout the images [Here](/public/Stripe/)
-
-To create them go on the Stripe dashboard, search for Product Catalog and then click on the add product button on the top right of the screen. You will need to create 3 products, one for each credit package as shown in the images before. We set them to One time payments, but you can change that if you want to and you can set the price too. After creating the products make sure to update the variables in the .env.local [your-stripe-price-id-one-credit, your-stripe-price-id-three-credit, your-stripe-price-id-five-credit] with their respective price ids, each price id is found in the product page at the bottom.
-
-### 11. Start the development server:
-
-For npm:
-
-```bash
-npm run dev
-```
-
-For yarn:
-
-```bash
-yarn dev
-```
-
-### 12. Visit `http://localhost:3000` in your browser to see the running app.
-
-## One-Click Deploy
-
-Default deploy using Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fastria-ai%2Fheadshots-starter%2Ftree%2Fmain&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=Set%20up%20environment%20variables%20for%20Astria%20AI%20and%20redirect%20URL%20in%20Supabase%20Auth%20dashboard.%20See%20.env.local.example%20for%20full%20config%20with%20Resend%20and%20Stripe.&envLink=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Fblob%2Fmain%2F.env.local.example&project-name=headshots-starter-clone&repository-name=headshots-starter-clone&demo-title=AI%20Headshot%20Generator&demo-description=A%20Professional%20AI%20headshot%20generator%20starter%20kit%20powered%20by%20Next.js%2C%20Leap%20AI%2C%20and%20Vercel&demo-url=https%3A%2F%2Fwww.getheadshots.ai%2F&demo-image=https%3A%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F1CEDfTwO5vPEiNMgN2Y1t6%2F245d1e0c11c4d8e734fbe345b9ecdc7c%2Fdemo.png&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fleap-ai%2Fheadshots-starter%2Ftree%2Fmain)
-
-
-## How To Get Good Results
-
-[![Good results Demo](/public/good_results.png)](https://blog.tryleap.ai/create-an-ai-headshot-generator-fine-tune-stable-diffusion-with-leap-api/#step-1-gather-your-image-samples-%F0%9F%93%B8)
-
-The image samples used to teach the model what your face looks like are critical. Garbage in = garbage out.
-
-- Enforce close-ups of faces and consider cropping so that the face is centered.
-- Enforce images with only one person in the frame.
-- Avoid accessories in samples like sunglasses and hats.
-- Ensure the face is clearly visible. (For face detection, consider using tools like [Cloudinary API](https://cloudinary.com/documentation/face_detection_based_transformations?ref=blog.tryleap.ai)).
-
-[![Avoid multiple faces](/public/multiple_faces.png)](https://blog.tryleap.ai/create-an-ai-headshot-generator-fine-tune-stable-diffusion-with-leap-api/#how-to-avoid-multiple-faces-in-results-%E2%9D%8C)
-
-If you get distorted results with multiple faces, repeated subjects, multiple limbs, etc, make sure to follow these steps and minimize the chance of this happening:
-
-- Make sure any samples uploaded are the same 1:1 height / width aspect ratio, for example 512x512, 1024x1024, etc.
-- Avoid multiple people in the samples uploaded.
-- Add "double torso, totem pole" to the negative prompt when generating.
-- Make sure your dimensions when generating are also 1:1 with the same height / width ratios of the samples.
-
-For more information on how to improve quality, read the blog [here](https://blog.tryleap.ai/create-an-ai-headshot-generator-fine-tune-stable-diffusion-with-leap-api/#step-1-gather-your-image-samples-%F0%9F%93%B8).
-
-<!-- ### All Thanks To Our Contributors:
-
-<a href="https://github.com/leap-ai/headshots-starter/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=leap-ai/headshots-starter" />
-</a> -->
-
-## Additional Use-Cases
-
-Headshot AI can be easily adapted to support many other use-cases of [Astria](https://www.astria.ai/) including:
-
-- AI Avatars
-  - [Anime](https://blog.tryleap.ai/transforming-images-into-anime-with-leap-ai/)
-  - [Portraits](https://blog.tryleap.ai/ai-time-machine-images-a-glimpse-into-the-future-with-leap-ai/)
-  - [Story Illustrations](https://blog.tryleap.ai/novel-ai-image-generator-using-leap-ai-a-comprehensive-guide/)
-
-[![Anime AI Demo](/public/anime.png)](https://www.astria.ai/gallery/packs)
-
-- Pet Portraits
-
-[![Pet AI Demo](/public/pet.png)](https://www.astria.ai/gallery/packs)
-
-- Product Shots
-- Food Photography
-
-[![Product AI Demo](/public/products.png)](https://www.astria.ai/)
-
-- Icons
-- [Style-Consistent Assets](https://blog.tryleap.ai/how-to-generate-style-consistent-assets-finetuning-on-leap/)
-
-[![Icons AI Demo](/public/icons.png)](https://www.astria.ai/)
-
-& more!
-
-## Contributing
-
-We welcome collaboration and appreciate your contribution to Headshot AI. If you have suggestions for improvement or significant changes in mind, feel free to open an issue!
-
-If you want to contribute to the codebase make sure you create a new branch and open a pull request that points to `dev`.
-
-## Resources and Support
-
-- Help Email: support@astria.ai
-
-## License
-
-Headshot AI is released under the [MIT License](https://choosealicense.com/licenses/mit/).
+</div>
