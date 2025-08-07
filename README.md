@@ -7,7 +7,7 @@
 *An open-source AI-powered headshot generator built with Next.js*
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-18-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.1-blue)](https://typescriptlang.org/)
 [![Supabase](https://img.shields.io/badge/Supabase-Database-green)](https://supabase.com/)
 
