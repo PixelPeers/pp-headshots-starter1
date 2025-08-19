@@ -4,7 +4,7 @@ export default function CompanyLogos() {
 const companies = [
   { name: "Google", logo: "/logos/google.svg" },
   { name: "Microsoft", logo: "/logos/microsoft.svg" },
-  { name: "Amazon", logo: "/logos/amazon.svg" },
+  { name: "Algonquin College", logo: "/logos/algonquin_college.svg" },
   { name: "Meta", logo: "/logos/meta.svg" },
   { name: "LinkedIn", logo: "/logos/linkedin.png" },
 ];
