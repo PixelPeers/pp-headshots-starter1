@@ -18,7 +18,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "Headshots AI",
+  title: "AI Headshots Click",
   description: "Generate awesome headshots in minutes using AI",
 };
 
