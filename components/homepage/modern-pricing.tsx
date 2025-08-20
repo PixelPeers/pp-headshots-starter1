@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import type React from "react"
+import React, { useState } from "react"
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -48,22 +48,27 @@ export default function ModernPricing() {
       bestValue: true,
     },
   ]
+    const popularIndex = tiers.findIndex(tier => tier.popular);
+    const [hoveredIndex, setHoveredIndex] = useState(popularIndex);
 
   return (
     <div className="mx-auto max-w-4xl px-4">
       <div className="flex flex-col items-center justify-center space-y-8">
         {/* Pricing Cards */}
-        <div className="mt-8 grid gap-6 md:grid-cols-3 lg:gap-8">
+        <div className="mt-8 grid gap-6 md:grid-cols-3 lg:gap-8" onMouseLeave={() => setHoveredIndex(popularIndex)}>
           {tiers.map((tier, index) => (
             <div
               key={index}
+              onMouseEnter={() => setHoveredIndex(index)}
               className={cn(
-                "pricing-card",
-                tier.popular && "pricing-card-popular"
+                "pricing-card flex flex-col hover:scale-105",
+                {
+                  "border-primary shadow-lg": hoveredIndex === index,
+                }
               )}
             >
               {tier.popular && (
-                <div className="pricing-badge">
+                <div className="pricing-badge dark:text-white">
                   Most Popular
                 </div>
               )}
@@ -95,9 +100,9 @@ export default function ModernPricing() {
                 <span className="text-5xl font-extrabold">{tier.price}</span>
               </div>
 
-              <p className="mt-4 text-sm text-muted-foreground">{tier.description}</p>
+              <p className="mt-4 text-sm text-muted-foreground h-16">{tier.description}</p>
 
-              <ul className="my-6 space-y-4">
+              <ul className="my-4 space-y-4 flex-grow">
                 {tier.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="pricing-feature">
                     <Check className="h-5 w-5 text-primary" />
@@ -106,13 +111,13 @@ export default function ModernPricing() {
                 ))}
               </ul>
               
-              <Link href="/login" className="mt-8 block w-full" aria-label={`Select ${tier.title} plan`}>
+              <Link href="/login" className="mt-3 block w-full" aria-label={`Select ${tier.title} plan`}>
                 <Button
                   className={cn(
                     "w-full",
                     tier.popular
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                      : "bg-secondary hover:bg-secondary/80"
+                      ? "bg-primary hover:bg-primary/90 text-primary-foreground dark:text-white/80"
+                      : "bg-secondary text-gray-400 dark:text-gray-600 dark:hover:text-white/70 dark:bg-slate-400 hover:bg-secondary/80 dark:hover:bg-slate-400/70"
                   )}
                   aria-label={`Select ${tier.title} plan`}
                 >
