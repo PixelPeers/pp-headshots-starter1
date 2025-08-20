@@ -30,7 +30,6 @@ const processSteps = [
   }
 ]
 
-// function ProcessStep({ step, isActive, index }: { step: typeof processSteps[0], isActive: boolean, index: number }) 
 function ProcessStep({ step, isActive, index, setActiveStep }: { step: typeof processSteps[0], isActive: boolean, index: number, setActiveStep: (index: number) => void }) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
