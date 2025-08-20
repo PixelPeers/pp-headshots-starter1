@@ -30,7 +30,8 @@ const processSteps = [
   }
 ]
 
-function ProcessStep({ step, isActive, index }: { step: typeof processSteps[0], isActive: boolean, index: number }) {
+// function ProcessStep({ step, isActive, index }: { step: typeof processSteps[0], isActive: boolean, index: number }) 
+function ProcessStep({ step, isActive, index, setActiveStep }: { step: typeof processSteps[0], isActive: boolean, index: number, setActiveStep: (index: number) => void }) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
@@ -97,6 +98,7 @@ function ProcessStep({ step, isActive, index }: { step: typeof processSteps[0], 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
+      onMouseEnter={() => setActiveStep(index)}
       className={cn(
         "group flex flex-col items-center text-center",
         "rounded-2xl border bg-card p-6 shadow-sm transition-all duration-200 hover:shadow-md",
@@ -146,6 +148,7 @@ export default function ProcessSection() {
               step={step}
               isActive={activeStep === index}
               index={index}
+              setActiveStep={setActiveStep}
             />
           ))}
         </div>
